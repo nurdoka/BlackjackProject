@@ -23,17 +23,17 @@ public class BlackjackApp {
 		String choice = "";
 		do {
 			displayHandsPlayerTurn();
+			if(player.getHandValue() == 21) {
+				System.out.println("Blackjack!!!");
+				System.out.println("Player won!!!");
+				System.exit(0);
+			}
 			System.out.println("Do you wanna Hit or Stand?: ");
 			choice = sc.next();
 			if (choice.toUpperCase().equals("HIT")) {
 				player.addCardToHand(dealer.dealCardToHand());
 			}
-			if(player.getHandValue() == 21) {
-				displayHandsPlayerTurn();
-				System.out.println("Blackjack!!!");
-				System.out.println("Player won!!!");
-				System.exit(0);
-			}
+			
 		} while (!choice.toUpperCase().equals("STAND") && !player.isBustHand());
 
 		if (player.isBustHand()) {
@@ -58,7 +58,7 @@ public class BlackjackApp {
 			System.out.println("Dealer won!!!");
 		else
 			System.out.println("Push!!!");
-
+sc.close();
 	}
 
 	public void firstRoundDealingCards() {
