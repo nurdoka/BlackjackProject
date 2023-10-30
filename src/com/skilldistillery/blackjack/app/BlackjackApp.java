@@ -28,7 +28,7 @@ public class BlackjackApp {
 			if (choice.toUpperCase().equals("HIT")) {
 				player.addCardToHand(dealer.dealCardToHand());
 			}
-		} while (!choice.toUpperCase().equals("STAND") || player.isBustHand());
+		} while (!choice.toUpperCase().equals("STAND") && !player.isBustHand());
 
 		if (player.isBustHand()) {
 			System.out.println("Dealer won!!!");
