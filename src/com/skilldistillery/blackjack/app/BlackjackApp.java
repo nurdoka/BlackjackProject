@@ -28,6 +28,12 @@ public class BlackjackApp {
 			if (choice.toUpperCase().equals("HIT")) {
 				player.addCardToHand(dealer.dealCardToHand());
 			}
+			if(player.getHandValue() == 21) {
+				displayHandsPlayerTurn();
+				System.out.println("Blackjack!!!");
+				System.out.println("Player won!!!");
+				System.exit(0);
+			}
 		} while (!choice.toUpperCase().equals("STAND") && !player.isBustHand());
 
 		if (player.isBustHand()) {
