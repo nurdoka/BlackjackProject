@@ -31,6 +31,7 @@ public class BlackjackApp {
 		} while (!choice.toUpperCase().equals("STAND") && !player.isBustHand());
 
 		if (player.isBustHand()) {
+			displayHandsDealerTurn();
 			System.out.println("Dealer won!!!");
 			System.exit(0);
 		}
